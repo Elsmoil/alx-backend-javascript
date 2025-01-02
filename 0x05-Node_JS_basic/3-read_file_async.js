@@ -1,9 +1,9 @@
-// 2-read_file.js
-const fs = require('fs');
+// 3-read_file_async.js
+const fs = require('fs').promises;
 
-function countStudents(path) {
+async function countStudents(path) {
   try {
-    const data = fs.readFileSync(path, 'utf8');
+    const data = await fs.readFile(path, 'utf8');
     const lines = data.trim().split('\n').slice(1);  // Skip the header
     const students = {};
 
