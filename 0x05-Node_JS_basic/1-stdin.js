@@ -11,12 +11,16 @@ const rl = readline.createInterface({
 rl.question('Welcome to ALX, what is your name?\n', (name) => {
   console.log(`Your name is: ${name}`);
   
-  // Close the readline interface and display the closing message
-  rl.close();
+  // Only print the closing message if the input is piped (not interactive)
+  if (process.stdin.isTTY) {
+    rl.close();
+  }
 });
 
-// When the readline interface closes, show the final message
+// When the readline interface closes, show the final message (for piped input)
 rl.on('close', () => {
-  console.log('This important software is now closing');
+  if (!process.stdin.isTTY) {
+    console.log('This important software is now closing');
+  }
 });
 
