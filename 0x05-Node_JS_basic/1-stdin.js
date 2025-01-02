@@ -6,7 +6,7 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-rl.question('Welcome to ALX, what is your name?\n', (name) => {
+rl.question('Welcome to Holberton School, what is your name?\n', (name) => {
   console.log(`Your name is: ${name}`);
 
 	if (process.stdin.isTTY) {
