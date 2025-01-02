@@ -15,6 +15,6 @@ rl.question('Welcome to ALX, what is your name?\n', (name) => {
 });
 	rl.on('close', () => {
 	if (!process.stdin.isTTY) {
-    console.log('This important software is now closing\n');
+    console.log('This important software is now closing');
   }
 });
