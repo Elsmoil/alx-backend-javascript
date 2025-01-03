@@ -1,6 +1,7 @@
 // 7-http_express.js
 const express = require('express');
-const countStudents = require('./3-read_file_async'); // Async read function for handling database
+const countStudents = require('./3-read_file_async');
+// Async read function for handling database
 const app = express();
 
 app.get('/', (req, res) => {
@@ -14,7 +15,7 @@ app.get('/students', (req, res) => {
 });
 
 app.get('/students/:major', (req, res) => {
-  const major = req.params.major;
+  const { major } = req.params;
   if (major !== 'CS' && major !== 'SWE') {
     return res.status(500).send('Major parameter must be CS or SWE');
   }
